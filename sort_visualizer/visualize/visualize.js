@@ -236,23 +236,3 @@ function reset_visualizer ()
     }
    
 }
-/*
-------------- to do ---------------
-- add the value of the select sort element
-- and update the colors on the randomize
-- so if I have the value of the select, call random and change the color bar
-- I would like to display the color code of the current select element
-
-
-- when sorted select changed, change directly the color code.
-- at the end of each sorting function, I will create a list of colorList && targetList in which I add color and target
-- fnd solution for merge sort and quick sort
-- I will call the colorCode with values in it in switch case before.
--
-- I need to add
-- for each color, I will create a block color [8*8px] (done)
-- under each I will put the target (done)
-
--- Now I would like to add a stop button, to stop the excecution of the visualizer
-- T do that , I need to take the setTimeOut to clear and call enable_buttons()
-*/

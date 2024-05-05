@@ -22,12 +22,3 @@ sortSelect.addEventListener('change', () => update_select_sort());
 
 }
 main();
-
-/*
-- after , I will handle the speed updating
--I learn how to update think a write a specific function for all button and operation that we want. by separating function
-- how and when to use correctly style in js
-- how to manipulate local and global variable ?! often use return value
-- I learn how to use the window.onload = update_sizeValue();
-- how to structure  a project : first layout, ...
-*/

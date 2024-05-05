@@ -42,18 +42,3 @@ function quick (arrayBars, barsHeight, low, high)
         quick (arrayBars, barsHeight,pivotIndex + 1, high);
     }
 }
-
-
-/*
-*** Characteristic of quick sort to show ***
-- current pivot , where the pivot is placed (red)
-- display j, which is lookuping of the element which is less than pivot (#fff)
-- display the current i range (orange)
-- display of the current recursion
-
-
-** color code **
-- white : traversing
-- orange : sorted elements
-- red : current minvalue
- */
