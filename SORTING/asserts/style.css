@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    border: none;
+}
+
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #141414;
+    height: 80px;
+    color: #fff;
+    padding: 0 20px;
+    font-size: 1.2rem;
+}
+
+.logo
+{
+
+    background-size: 100%;
+    background-image:linear-gradient(#1a1aff, #00aaff, #0ef);
+    -webkit-background-clip: text; 
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    font-size: 2rem;
+}
+
+.header-container
+{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    color: #fff;
+}
+.btn-header
+{
+    border-radius: 8px;
+    background-color: #8080ff;
+    height: 3.5rem;
+    width: 150px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.btn-header:hover
+{
+  transition: all ease-in-out 0.3s;
+  background-color:  #010113;
+  transform: scale(90%);
+}
+
+/*--------------------------Work on the footer ----------------------------*/
+
+footer
+{
+    background: #141414;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    padding: 20px;
+    color: #fff;
+}
+
+.footer-container
+{
+   
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.social
+{
+    margin: 0 20px;
+    font-size: 1.5rem;
+}
+.social-media
+{
+    margin-bottom: 15px;
+
+}
+
+
+.me i
+{
+    font-size: 12px;
+    margin-right: 5px; 
+}
+.me p
+{
+    color: rgb(150, 142, 142);
+    font-style: italic;
+    text-align: center;
+    font-size: 12px;
+}
+.me 
+{
+    margin-bottom: 15px;
+}
+.email
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.email p
+{
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+.email a
+{
+    color: #8080ff;
+}

@@ -1,0 +1,82 @@
+To design a web page BASICS:
+
+1. Main page
+- header: which include the logo, the main buttons on other page of the projects.(animation, visualizer, learn more).
+- the footer: Where the logo og my account linkedin, github .... and also my mail account ...
+- The content: it can variate, depends on your project. Ideas are separate in a section tag.
+
+2. Others page:
+- How to design them ?!
+- What is your coding style ?!
+- WHat is your standard layout ?!
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+****** For the comming project ******
+--- In the main page ---
+I learn the br tag: <br> tag is an HTML element used to insert a line break or a line break-like space in a webpage.
+- I relearn how to use the span tag. in a text to apply siome style on it .
+- I learn how to apply (scale, hover) in styling.
+- I learn how to put a mail in a footer (mailto).
+- I learn how to structured a headerdiv (div && navbar), and a footer.
+I learn how to choose a color .. background color... color for button.
+
+NB: The main, Visualization and the comparaison have the own .hmtl, .css, and .js .
+
+--- Visualization ---
+- Use the input for the slide. (the speed and for the numberItems).
+in the header: logo, button: random(list different type of random), algorithm, comming home page.
+- section: main content: at left the block of the Visualization (only a div;  to complete in js). At the right: color code && complexity.
+under: learn more about the algorithm.
+
+---  Sort organization ---
+I create a file separate file for every algorithm. 
+I create a displayState() function which I call in some specific part in the code to show the state.
+I use also an unable and diseable function to diseable all function when the algorithm in running. and able when it's finish.
+NB. The function display state apply operation on only un bar displayState (bar, heighBar,color);
+I learn how to use the % instead of px for more flexibility.the margin size adjusts dynamically based on the size of the container:margin:0% ${marginBar}%;
+I learn to apply the % for the margin:  width: ${100 / sizeValue - (2 * marginBar)}%
+Ilearn how to use the disabled button
+- I learn that the function in window.settimeout will execute after the specified delay.
+- I learn how to separate event and action of a button (write a function and associate to an event) : size.addEventListener('change', () => update_sizeValue(size.value));
+- I learn that when a function will need an input value, it is more better to put it inside the function.
+* I need to be able to define the specific role of the a function.
+footer : same with the main.
+--- Comparaison ---
+- For the first SORTING_VISUALIZER porject, I create one div for each block of sorting and made it add to the bar in display function in .js.
+
+
+I need to take  a paper and a pen write down for each algorithm, the caracteristic that I would like to show, and the color .
+- I learn to put a constant range for the randomize : Math.floor(Math.random() * (size.max));//Math.floor(Math.random() * sizeValue) + 1
+-- // When I want to  create something dynamically, it is important to do in js
+
+
+/*------------------------------- To do ------------------------------------------*/
+---- display part ---
+- Need to write down for each algorithm there characteristic that I would to show (Done)
+- pick up the write color to show them. (Done)
+- Identify in the algorithm the place where to use them. at most 4 colors. (Done)
+
+---- visualizer part --- 
+- I would like to have bars which occupied 80% of there container depending the number of bars (Done).
+- Find the adatable size (Done) and the speed (Done)
+- fixed the bug of running depending on de speed. (Done)
+- research and choiced how to display rotate or not and with border or not . (Done)
+
+-- color help ----
+- write a color code help part (at the bottom to explain the meaning of each color)
+- learn part link (time complexity, space complexity, (nbres of swap, nbres iterations) about the algorithm (caracteristic))
+- Add a stop button to stop the algorithm when it running.
+- fixing : when I select a new algorithm, randomize directly
+- fixing : fix the bug of quick sort algorithm
+
+
+
+------------------------ TO DO SOON ----------------------------------
+
+- structured files (assert, index.html)
+- arrange comment (clean to do list ... and comment)
+- design and add coming soon
+- publish on github
+- research what to on the << more about sort algorithm >>
+- research how to structed << more about sort algorithm >>
