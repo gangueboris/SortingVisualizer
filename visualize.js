@@ -208,7 +208,7 @@ function update_select_sort ()
 
         case 'SELECTION':
             const selectionColorsSet = ['#fff', '#ff0040', '#FFA500'];
-            const selectionTargetSet = ['traversal', 'currentMinValue', 'sorted'];
+            const selectionTargetSet = ['traversal', 'current min', 'sorted'];
             colorCode(selectionColorsSet,  selectionTargetSet);
             break;
 
