@@ -102,22 +102,26 @@ function speed_manager ()
             break;
 
         case 2:
-            delayTime = 0.3775 * time;
+            //delayTime = 0.3775 * time;
+            delayTime = 1/2*0.5 * time;
             break;
 
         case 3:
-            delayTime = 0.255 * time; 
+            //delayTime = 0.255 * time; 
+            delayTime = 1/3*0.5 * time;
             break;
     
         case 4:
-            delayTime = 0.1325 * time; 
+            //delayTime = 0.1325 * time; 
+            delayTime = 1/4*0.5 * time;
             break;
 
         case 5:
-            delayTime = 0.01 * time;
+            //elayTime = 0.01 * time;
+            delayTime = 1/5*0.5 * time;
             break;
     }
-    speed_p.innerText = 'SPEED : ' + speed.value ;
+    speed_p.innerText = 'SPEED : ' + speed.value +'x';
 }
 
 
