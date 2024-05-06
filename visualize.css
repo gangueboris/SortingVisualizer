@@ -151,36 +151,95 @@ header {
    padding: 30px 15px;
    width: 80%;
 }
-@media only screen
-and (min-device-width: 380px) /*Portrait*/
-and (max-device-width: 720px) /*landscape*/
+@media only screen 
+and (min-device-width: 380px)
+and (max-device-width: 720px)
 and (orientation: portrait)
 {
-    .logo
+    header {
+        padding: 0 20px;
+    }
+
+    
+     .logo
     {
+        text-align: center;
         background-size: 100%;
         background-image:linear-gradient(#1a1aff, #00aaff, #0ef);
         -webkit-background-clip: text; 
         -moz-background-clip: text;
         -webkit-text-fill-color: transparent; 
         -moz-text-fill-color: transparent;
-        font-size: 1rem;
+        font-size: 8px;
+        width: auto;
+        padding-right: 23px;
+    }
+    .sliders 
+    {
+        display: flex;
+        flex-direction:column;
+       margin-right: 10px;
     }
 
-    .header-container
+    .slider
     {
-        width: 40%;
-        display: flex;
-        justify-content: space-between;
-        margin-right: 10px;
-        gap:3px;
+       
+       font-weight: 500;
+       font-style:oblique;
+       font-size: 8px;
+    
+      
     }
-    .btn-header
+    #speed, #size
     {
-    height: 1.9rem;
-    width: 150px;
-    font-size: 0.5rem;
-    font-weight: 500;
-    padding: 0 5px;
-   }   
+        height: 5px;
+        width: 100%;
+    }
+   
+    
+    .buttons-container 
+    {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 10px;
+    margin:0;
+   }
+  
+   #sort-select
+   {
+  
+    height: 1.6rem;
+    width: 50px;
+    font-size: 8px;
+    font-weight: 600;
+  
+  }
+    
+    .run
+    {
+  
+        height: 1.6rem;
+        font-size: 8px;
+        width:10rem;
+        font-weight: 600;
+    }
+    .randomize
+    {
+        height: 1.6rem;
+        font-size: 8px;
+        font-weight: 600;
+        padding-right:25px;
+    
+    }
+
+    .icone
+    {
+   
+   background-color: #141414;
+   width: 50px;
+   font-size: 1rem;
+  
+   }
+ 
 }
