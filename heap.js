@@ -1,3 +1,7 @@
+/*This function sort heapify only three nodes.When we apply recursion,the algorithm will apply max on node to node but it's doesnt looks behind.
+So to max heapify, an array, we must apply maxHeapify form buttom  to top.
+*/
+
 function swap (arrayBars, barsHeight, i, j)
 {
      //Display before the swap 

@@ -34,3 +34,15 @@ function bubble(arrayBars, barsHeight)
     enable_buttons();
   return [bubbleColorsSet, bubbleTargetSet];
 }
+
+/*
+*** Characteristic of bubble sort to show ***
+- The largest element is put at the end (green clear (linear gradient))
+- display the comparaison (#fff)
+- display the swap (blue clear)
+
+** color code **
+- white : comparaison
+- orange : sorted elements
+- purple: swap elements
+ */

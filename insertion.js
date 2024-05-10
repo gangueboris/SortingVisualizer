@@ -24,3 +24,18 @@ function insertion (arrayBars, barsHeight)
     bar_stateUpdate(arrayBars[i-1], barsHeight[i-1],insertioncolorsSet[2]); 
     enable_buttons();
 }
+
+/*
+*** Characteristic of insertion sort to show **
+- display the current i (red)
+- display the current compare j (#fff)
+- display the step by step range (orange)
+- I showing where is placed the current i elements (red after orange)
+
+** Color code **
+- red : the current i
+- white : the j for the ranging
+- orange : sorted elements.
+
+NB: For the analyse, I can add to show the importante state.
+ */

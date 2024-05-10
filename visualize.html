@@ -35,11 +35,13 @@
                 </select>
                 <button class="run btn">RUN</button>
                 <button class="randomize btn">RANDOMIZE</button>
-            </div>
-            <div>
-                <button class="icone reset"><i class="fas fa-undo reset"></i></button>
-                <button class="icone"><a href="../asserts/index.html"><i class="fas fa-home home"></i></a></button>
-            </div>
+                <div class="icone-tcheck">
+                    <button class="icone reset"><i class="fas fa-undo reset"></i></button>
+                    <input type="checkbox" id="checkboxInput">
+                    <label for="checkboxInput" class="toggleSwitch"></label>
+                </div>
+                
+            </div>  
         </div>  
     </header>
 
@@ -48,7 +50,53 @@
         <div class="color-code"></div>
     </div>
 
+    <!----- Table part ----->
+    <div class="table-container content-toggle">
+        <table>
+            <thead>
+                <!--Put elements on the row-->
+                <tr>
+                    <th>Sort Algorithm</th>
+                    <th>Time complexity</th>
+                    <th>Space complexity</th>
+                    <th>Advantages</th>
+                    <th>Disadvantages</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="td1"></td>
+                    <td id="td2"></td>
+                    <td id="td3"></td>
+                    <td id="td4"></td>
+                    <td id="td5"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-container">
+            <div class="work">
+                <h1>Let's see how it works !</h1>
+                <p class="work-container">Bubble sort performs the swapping of adjacent pairs without the use of any major data structure. Hence Bubble sort algorithm is an in-place algorithm.</p>
+            </div>
+        </div>
+    </div>
 
+    <footer>
+        <div class="footer-container">
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/boris-saan-gangue-48a146285/" target="_blank"><i class="fab fa-linkedin  social"></i></a>
+                <a href="https://github.com/gangueboris" target="_blank"><i class="fab fa-github social"></i></a>
+                <a href="https://www.instagram.com/boris_gangue/" target="_blank"><i class="fab fa-instagram  social"></i></a>
+            </div>
+            <div class="me">
+                <p><i class="fas fa-user-circle"></i>Saan Boris GANGUE</p>
+            </div>
+            <div class="email">
+                <p>CONTACT ME:</p>
+                <a  href="mailto:gangueboris@gmail.com">gangueboris@gmail.com</a>
+            </div>
+        </div>    
+    </footer>
 
     <script src="visualize.js"></script>
     <script src="bubble.js"></script>

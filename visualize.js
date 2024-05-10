@@ -10,11 +10,57 @@ const randomize = document.querySelector('.randomize');
 const visualizer = document.querySelector('.visualizer');
 const reset = document.querySelector('.reset');
 const buttons = document.querySelectorAll('.btn');
+const checkboxInput = document.getElementById('checkboxInput');
+const td1 = document.getElementById('td1');
+const td2 = document.getElementById('td2');
+const td3 = document.getElementById('td3');
+const td4 = document.getElementById('td4');
+const td5 = document.getElementById('td5');
+const descriptContainer = document.querySelector('.work-container');
+const contentToggle = document.querySelector('.content-toggle');
 const marginBar  = 0.1; // in %
 const time = 1000; //ms
 let currentDelay = 0;
 let delayTime = 0;
 
+const bubbleAdv = ["Simple to Understand and Implement", "No Extra Space Required","Can Perform Well on Nearly Sorted Data", "Stable Sorting"];
+const bubbleDis = ["Inefficient for Large Datasets", "Not Suitable for Almost Sorted Data"];
+const selectionAdv = ["No Extra Space Required","Can Perform Well on Nearly Sorted Data", "Stable Sorting"];
+const selectionDis = ["Not Adaptive", "Doesn't adapt to the input data", "Inefficient for Large Datasets"];
+const insertionAdv = ["Efficient for Small Datasets and Nearly Sorted Data","Simple Implementation","In-Place Sorting", "Adaptive"];
+const insertionDis = ["Not Suitable for Randomized Input", "Inefficient for Large Datasets", "Requires Multiple Swaps"];
+const heapAdv = ["Guaranteed Worst-case Time Complexity", "Efficient for Large Datasets","In-Place Sorting","Stable Sorting"];
+const heapDis = ["Complex Implementation","Not Suitable for Small Datasets", "Not Adaptive", "Not Suitable for Small Datasets"];
+const mergeAdv = ["Efficient for Large Datasets", "Guaranteed Worst-case Time Complexity","Stable Sorting"];
+const mergeDis = ["Requires Additional Space", "Complex Implementation", "Not Adaptive(doesn't take advantage of pre-existing order in the input data)", "Not In-place"];
+const quickAdv = ["Efficient for Large Datasets", "Fastest Sorting Algorithm in Practice", "In-place Sorting", "Adaptive(takes advantage of pre-existing order in the input data)"];
+const quickDis = ["Not Guaranteed Worst-case Time Complexity", "Complex Implementation","Recursive Nature", "Instability"];
+
+const bubbleTC = ["Best case: Ω(n)", "Average case: Θ(n²)", "Worst case: O(n²)"];
+const selectionTC = ["Best case: Ω(n²)", "Average case: Θ(n²)", "Worst case: O(n²)"];
+const insertionTC = ["Best case: Ω(n)", "Average case: Θ(n²)", "Worst case: O(n²)"];
+const heapTC = ["Best case: Ω(nlogn)", "Average case: Θ(nlogn)", "Worst case: O(nlogn)"];
+const mergeTC = ["Best case: Ω(nlogn)", "Average case: Θ(nlogn)", "Worst case: O(nlogn)"];
+const quickTC = ["Best case: Ω(nlogn)", "Average case: Θ(nlogn)", "Worst case: O(n²)"];
+
+
+const tableContent = {
+    'BUBBLE':{timeComplexity:bubbleTC , spaceComplexity: 'O(1)', advantages: bubbleAdv, disadvantages: bubbleDis},
+    'SELECTION':{timeComplexity:selectionTC, spaceComplexity: 'O(1)', advantages: selectionAdv, disadvantages: selectionDis},
+    'INSERTION':{timeComplexity: insertionTC, spaceComplexity: 'O(1)', advantages: insertionAdv, disadvantages: insertionDis},
+    'HEAP':{timeComplexity:heapTC , spaceComplexity: 'O(1)', advantages: heapAdv, disadvantages: heapDis},
+    'MERGE':{timeComplexity: mergeTC , spaceComplexity: 'O(n)', advantages: mergeAdv, disadvantages: mergeDis},
+    'QUICK':{timeComplexity: quickTC, spaceComplexity: 'O(1)', advantages:quickAdv, disadvantages: quickDis},
+   };
+   
+const descript = {
+        'BUBBLE': "In each pass, it compares adjacent elements and swaps them if they are in the wrong order (smaller element comes after a larger one). The larger element essentially 'bubbles' up to its correct position at the end of the array. This process continues for all passes through the array.\n\nLoop Invariant: After each iteration of the loop, the largest element seen so far is guaranteed to be at the end of the sorted sub-array",
+        'SELECTION':"Selection sort works by repeatedly finding the smallest element in the unsorted part of the list. It then swaps that tiny element all the way to the front of the unsorted section, effectively putting it in its final sorted position. This process continues, shrinking the unsorted section with each pass and building the sorted section from the beginning of the list.\n\nLoop Invariant: After each pass, the first i elements (where i is the current iteration number) are guaranteed to be sorted in ascending order.",
+        'INSERTION': "Insertion sort works like organizing cards in your hand. Imagine starting with an empty sorted section at the beginning. You take each element from the unsorted portion and insert it into the correct position within the sorted section. To find the correct position, you compare the element with the ones already sorted. This way, you gradually build the sorted section one element at a time, ensuring each element is placed in its rightful position relative to the sorted elements before it.\n\n Loop invariant: After each iteration (pass) through the unsorted portion of the array, the sub-array from index 0 up to, but not including, the current index (i), is guaranteed to be sorted in ascending order.",
+        'HEAP': "Heap sort first builds a special tree structure called a max-heap from the entire array, where the largest element bubbles up to the top. Then, it repeatedly extracts the largest element (now at the root) from the heap, swaps it with the last element in the unsorted section, and rebuilds the heap on the remaining elements. This process continues, progressively shrinking the unsorted section and placing the largest elements at the end of the array, effectively building the sorted portion in descending order.\n\nLoop invariant: After each extraction of the maximum element and subsequent heap maintenance, the sub-array from the end of the sorted portion (initially the entire array) up to, but not including, the current index (i), is guaranteed to be a valid max-heap.",
+        'MERGE':"Merge sort is a divide-and-conquer sorting algorithm. It works by recursively breaking down the unsorted list into sub-lists containing a single element each (considered already sorted). Then, it repeatedly merges these sub-lists in pairs, comparing elements from each and inserting the smaller one into the final sorted list. This merging process continues until all sub-lists are combined into a single, fully sorted list.\n\nLoop invariant: After each comparison between elements from the two sub-lists being merged, all elements processed so far in the output (sorted) list are guaranteed to be in ascending order.",
+        'QUICK': "Quick sortis a divide-and-conquer sorting algorithm. It picks an element (often the last) as the pivot and rearranges the array. Elements smaller than the pivot bubble up to its left, while larger ones sink to its right, effectively creating two sub-arrays. The magic happens next: Quick sort recursively sorts these sub-arrays independently, leveraging the already-positioned pivot as a boundary.\n\nLoop invariant: After each iteration of the loop that compares elements with the pivot, all elements to the left of the current index i (excluding the pivot) are guaranteed to be less than the pivot.",
+    };
 
 // Random generator elements function 
 function random_generator() 
@@ -123,7 +169,6 @@ function speed_manager ()
     }
     speed_p.innerText = 'SPEED : ' + speed.value +'x';
 }
-
 
 function run_visualizer (arrayBars, barsHeight)
 {
@@ -240,3 +285,113 @@ function reset_visualizer ()
     }
    
 }
+
+function update_table_content ()
+{
+   td1.innerText = `${sortSelect.value}`;
+   td3.innerText = tableContent[`${sortSelect.value}`].spaceComplexity;
+   const currentAdv = tableContent[`${sortSelect.value}`].advantages;
+   const currentDis = tableContent[`${sortSelect.value}`].disadvantages;
+
+   const TC = tableContent[`${sortSelect.value}`].timeComplexity;
+   // Create ul
+   const ulTC = document.createElement('ul');
+   const ulAdv = document.createElement('ul');
+   const ulDis = document.createElement('ul');
+   
+  
+   for (let i = 0; i < TC.length; i++)
+   {
+     let liTC = document.createElement('li');
+     liTC.innerText = TC[i];
+     ulTC.appendChild(liTC);
+   }
+   for (let i = 0; i < currentAdv.length; i++)
+   {
+      let liAdv = document.createElement('li');
+      liAdv.innerText = currentAdv[i];
+      ulAdv.appendChild(liAdv);
+   }
+
+   for (let i = 0; i < currentDis.length; i++)
+   {
+      let liDis = document.createElement('li');
+      liDis.innerText = currentDis[i];
+      ulDis.appendChild(liDis);
+   }
+   td2.innerHTML = '';
+   td4.innerHTML = '';
+   td5.innerHTML = '';
+
+   td2.appendChild(ulTC);
+   td4.appendChild(ulAdv);
+   td5.appendChild(ulDis);
+
+   descriptContainer.innerText = '';
+   descriptContainer.innerText = descript[`${sortSelect.value}`];
+
+
+   // for the adv and dis , I will handle that by using list
+   /*
+    - For adv and dis, I would like to display that in a list:
+    - I would like when list  is displayed: others elements will be center
+    - I will test by adding ul and li list
+
+       *** to do ***
+    - reseach dis && adv elements (Done)
+    - do also the window onload (Done)
+    - to add, I need to create a li, add text and append child to ul (Done)
+    - research + code for the how it works / description.
+   */
+   
+}
+
+
+function  update_learnMore()
+{
+    if (!checkboxInput.checked) 
+    {
+       contentToggle.style.display = 'none';
+       contentToggle.style.maxHeight = '0';
+    }
+    else
+    {
+      contentToggle.style.display = 'flex';
+      contentToggle.style.maxHeight = contentToggle.scrollHeight + 'px';
+    }
+}
+
+/*
+------------- to do ---------------
+- add the value of the select sort element
+- and update the colors on the randomize
+- so if I have the value of the select, call random and change the color bar
+- I would like to display the color code of the current select element
+
+
+- when sorted select changed, change directly the color code.
+- at the end of each sorting function, I will create a list of colorList && targetList in which I add color and target
+- fnd solution for merge sort and quick sort
+- I will call the colorCode with values in it in switch case before.
+-
+- I need to add
+- for each color, I will create a block color [8*8px] (done)
+- under each I will put the target (done)
+
+-- Now I would like to add a stop button, to stop the excecution of the visualizer
+- T do that , I need to take the setTimeOut to clear and call enable_buttons()
+*/
+
+
+/*
+- I need to select every td and change it based on the value of 
+sort-select
+- I need to select also the paragraph of how it works and do the same.
+- For advantages and disadvantages, make a list.
+
+*** Approch ***
+- First I will handle the changing based on the value of sort-select
+- Second I will hidden and event when click on learn more
+content.bubble.timeComplexity
+
+*/

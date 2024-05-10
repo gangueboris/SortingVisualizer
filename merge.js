@@ -49,3 +49,10 @@ function mergeBoth (arrayBars,barsHeight, l, r, mid)
         currentIndex++;
     }
 }
+
+
+/*
+- left part red
+- right part blue
+- merge orange
+ */
