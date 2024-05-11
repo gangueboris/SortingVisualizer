@@ -447,6 +447,15 @@ and (orientation: portrait)
     left: 5px;
   }
 
+  .visualizer
+{
+    width: 90%;
+    height: 500px;
+}
+.color-code
+{
+    font-size: 10px;
+}
   /*Handle the table container*/
   table 
 {

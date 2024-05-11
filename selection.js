@@ -36,6 +36,7 @@ function selection (arrayBars, barsHeight)
     }
     bar_stateUpdate(arrayBars[i-1], barsHeight[i-1],selectionColorsSet[2]);
     enable_buttons();
+   return [selectionColorsSet, selectionTargetSet];
 }
 
 

@@ -1,25 +1,6 @@
 /*This function sort heapify only three nodes.When we apply recursion,the algorithm will apply max on node to node but it's doesnt looks behind.
 So to max heapify, an array, we must apply maxHeapify form buttom  to top.
 */
-
-function swap (arrayBars, barsHeight, i, j)
-{
-     //Display before the swap 
-     bar_stateUpdate(arrayBars[i], barsHeight[i], 'blue'); 
-     bar_stateUpdate(arrayBars[j], barsHeight[j], 'blue');
-
-     [barsHeight[i], barsHeight[j]] = [barsHeight[j], barsHeight[i]];  // swap
-
-    // display state after the swaps
-     bar_stateUpdate(arrayBars[i], barsHeight[i], "blue");
-     bar_stateUpdate(arrayBars[j], barsHeight[j], "blue");
-
-     // reset the color bar to the original color
-     bar_stateUpdate(arrayBars[i], barsHeight[i], "linear-gradient(#3c77e6, #00aaff, #0ef)");
-     bar_stateUpdate(arrayBars[j], barsHeight[j], "linear-gradient(#3c77e6, #00aaff, #0ef)");
-}
-
-
 function max_heapify (arrayBars, barsHeight, size, index)
 {
     let largestIndex = index;
@@ -38,7 +19,7 @@ function max_heapify (arrayBars, barsHeight, size, index)
 
     if (largestIndex !== index)
     {
-        swap(arrayBars, barsHeight, largestIndex, index);
+        swap(arrayBars, barsHeight, largestIndex, index, 'blue', "linear-gradient(#3c77e6, #00aaff, #0ef)");
         max_heapify (arrayBars, barsHeight, size, largestIndex);
     }
    return;
@@ -46,6 +27,9 @@ function max_heapify (arrayBars, barsHeight, size, index)
 
 function heap (arrayBars, barsHeight)
 {
+    const heapColorsSet = ['#00f','#fff', '#FFA500'];
+    const heapTargetSet = ['parent & maxChild','maxValue and swap','sorted'];
+
    // Build maxheap
     for (let i = Math.floor(barsHeight.length / 2) -1; i >= 0; i--)
     {
@@ -67,6 +51,7 @@ function heap (arrayBars, barsHeight)
     }
     bar_stateUpdate(arrayBars[0], barsHeight[0], '#FFA500');
     enable_buttons();
+    return [heapColorsSet, heapTargetSet];
 }
 
 /*

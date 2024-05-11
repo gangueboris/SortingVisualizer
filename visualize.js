@@ -137,6 +137,25 @@ function bar_stateUpdate(bar, barHeight, color)
     window.setTimeout (() => bar.style = `margin: 0% ${marginBar}%; height: ${barHeight}%; background: ${color};width: ${100/size.value - (2 * marginBar)}%;  border-radius: 10px 5px 0 0;`,currentDelay += delayTime);
 }
 
+function swap (arrayBars, barsHeight, i, j, firstC, secondC)
+{
+     //Display before the swap 
+     bar_stateUpdate(arrayBars[i], barsHeight[i], firstC); 
+     bar_stateUpdate(arrayBars[j], barsHeight[j], firstC);
+
+     [barsHeight[i], barsHeight[j]] = [barsHeight[j], barsHeight[i]];  // swap
+
+    // display state after the swaps
+     bar_stateUpdate(arrayBars[i], barsHeight[i], firstC);
+     bar_stateUpdate(arrayBars[j], barsHeight[j], firstC);
+
+     // reset the color bar to the original color
+     bar_stateUpdate(arrayBars[i], barsHeight[i], secondC);
+     bar_stateUpdate(arrayBars[j], barsHeight[j], secondC);
+}
+
+
+
 function speed_manager ()
 {
     //delayTime = speed.value *0.01 *1000;   // Update the delayTime (the display time ) based on the speed.
@@ -178,7 +197,6 @@ function run_visualizer (arrayBars, barsHeight)
         case 'BUBBLE':
             const bubbleColorTarget = bubble(arrayBars, barsHeight);
             colorCode(bubbleColorTarget[0], bubbleColorTarget[1]);
-
             break;
         case 'INSERTION':
            const insertionColorTarget = insertion(arrayBars, barsHeight);
@@ -186,11 +204,11 @@ function run_visualizer (arrayBars, barsHeight)
             break;
         case 'SELECTION':
             const selectionColorTarget = selection(arrayBars, barsHeight);
-            colorCode(selectionColorTarget[0], selectionColorTarget[1]);
+            colorCode(selectionColorTarget[0], selectionColorTarget[1]);          
             break;
         case 'QUICK':
-            const quickColors = ['#f00','#FFA500', '#fff'];
-            const quickTarget = ['pivot', 'range less than pivot', 'traversal'];
+            const quickColors = ['#f00', '#fff'];
+            const quickTarget = ['pivot','traversal  + swap'];
             colorCode(quickColors, quickTarget);
             quick(arrayBars, barsHeight, 0, barsHeight.length-1);
             enable_buttons();
@@ -258,8 +276,8 @@ function update_select_sort ()
             break;
 
         case 'QUICK':
-            const quickColors = ['#f00','#FFA500', '#fff'];
-            const quickTarget = ['pivot', 'range less than pivot', 'traversal'];
+            const quickColors = ['#f00', '#fff'];
+            const quickTarget = ['pivot','traversal  + swap'];
             colorCode(quickColors, quickTarget);
             break;
         case 'MERGE':
@@ -279,9 +297,9 @@ function reset_visualizer ()
 {
     if(run.innerHTML === 'RUNNING ...')
     {
+        enable_buttons();
         barsHeight = random_generator();
         arrayBars = random_diplay(barsHeight);
-        enable_buttons();
     }
    
 }

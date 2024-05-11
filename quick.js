@@ -14,18 +14,11 @@ function partition (arrayBars, barsHeight, low, high)
             //i > 0 ? bar_stateUpdate(arrayBars[i], barsHeight[i], "linear-gradient(#3c77e6, #00aaff, #0ef)") : bar_stateUpdate(arrayBars[0], barsHeight[0], "linear-gradient(#3c77e6, #00aaff, #0ef)"); // update the position of the i
             i++;
             // display the swap
-            bar_stateUpdate(arrayBars[i], barsHeight[i], '#fff');
-            [barsHeight[i], barsHeight[j]] = [barsHeight[j], barsHeight[i]];
-            bar_stateUpdate(arrayBars[i], barsHeight[i], '#FFA500'); // maybe temporary // bar small than the pivot
+            swap(arrayBars, barsHeight, i, j,'#fff', "linear-gradient(#3c77e6, #00aaff, #0ef)");
        }
     }
-    bar_stateUpdate(arrayBars[j], barsHeight[j], "linear-gradient(#3c77e6, #00aaff, #0ef)");
-
-    bar_stateUpdate(arrayBars[i+1], barsHeight[i+1], '#fff');
-    [barsHeight[i+1], barsHeight[high]] = [barsHeight[high], barsHeight[i+1]];
-    bar_stateUpdate(arrayBars[i+1], barsHeight[i+1], '#FFA500');
-    bar_stateUpdate(arrayBars[high], barsHeight[high], "linear-gradient(#3c77e6, #00aaff, #0ef)");
-
+    swap(arrayBars, barsHeight, i+1, high,'#fff', "linear-gradient(#3c77e6, #00aaff, #0ef)");
+   
     //bar_stateUpdate(arrayBars[i+1], barsHeight[i+1], "linear-gradient(#3c77e6, #00aaff, #0ef)");
 
     return i + 1;  // return pivot index;  

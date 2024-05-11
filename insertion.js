@@ -23,6 +23,7 @@ function insertion (arrayBars, barsHeight)
     }
     bar_stateUpdate(arrayBars[i-1], barsHeight[i-1],insertioncolorsSet[2]); 
     enable_buttons();
+    return [insertioncolorsSet, insertionTargetSet];
 }
 
 /*
