@@ -1,4 +1,6 @@
 # SortingVisualizer
+![image](https://github.com/user-attachments/assets/4207f4ae-c5f1-4681-935c-872f32bb686d)
+
 
 ## Objectif du Sorting Visualizer
 
